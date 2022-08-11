@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Teste</title>
+</head>
+<body>
+
+<h1>Salvou</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a th:href="@{/home/formulario}"><button type="button" class="btn btn-success">Voltar ao Cadastro</button></td>
+				<td><a th:href="@{/home/lista}"><button type="button" class="btn btn-success">Lista de Pratos</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

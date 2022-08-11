@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Teste</title>
+</head>
+<body>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Código</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Preço</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each = "prato: ${listaDePratos}">
+				<td th:text="${prato.codigo}"></td>
+				<td th:text="${prato.nome}"></td>
+				<td th:text="${prato.preco}"></td>
+				
+				<td> <img width="200" height="200" th:src="@{'/images/'+${prato.nome}+.png}"/> </td>
+
+				<td> <a th:href="@{/home/lista/excluir/{codigo} (codigo = ${prato.codigo})}"> <button type="button" class="btn btn-danger">X</button></td>
+				<td> <a class="btn btn-primary" th:href="@{/home/lista/atualizar/{codigo} (codigo = ${prato.codigo})}">Editar</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<td><a th:href="@{/home}"><button type="button" class="btn btn-success">Voltar ao Inicio</button></td>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
