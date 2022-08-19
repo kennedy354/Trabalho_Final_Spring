@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+<head>
+	<meta charset="UTF-8">
+	<title>Teste</title>
+</head>
+<body>
+	<h5>
+	<form method="post" action="/home/cadastro/salvar" th:object="${pessoa}">
+	
+	<input type="hidden" th:field="*{id}" />
+	
+	Nome: <input type="text" th:field="*{nome}"/><br><br>
+	CPF: <input type="text" th:field="*{cpf}"/><br><br>
+	Data de Nascimento: <input type="date" th:field="*{dataNascimento}"><br><br>
+	Endereço: <input type="text" th:field="*{endereco}"/><br><br>
+	Email: <input type="text" th:field="*{email}"/><br><br>
+	Senha: <input type="text" th:field="*{senha}"/><br><br>
+	
+	<input type="submit" value="Cadastrar"/>
+	</form><br>
+	</h5>
+	<td><a th:href="@{/home}"><button type="button" class="btn btn-success">Voltar ao Inicio</button></td>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
