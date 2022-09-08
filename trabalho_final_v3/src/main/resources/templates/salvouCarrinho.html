@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Adicionar</title>
+</head>
+<body>
+
+<h4>Adicionado ao Carrinho com Sucesso</h4>
+
+	<table class="table">
+		<thead>
+			<tr>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td><a th:href="@{/home/carrinho}"><button type="button" class="btn btn-warning">Entrar no Carrinho</button></td></tr>
+			<tr><td><a th:href="@{/home/lista}"><button type="button" class="btn btn-success">Voltar a Loja</button></td></tr>
+		</tbody>
+	</table>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

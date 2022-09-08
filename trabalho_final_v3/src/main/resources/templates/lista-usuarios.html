@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Usuários</title>
+</head>
+<body>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Nome</th>
+				<th scope="col">CPF</th>
+				<th scope="col">Data de Nascimento</th>
+				<th scope="col">Endereço</th>
+				<th scope="col">Email</th>
+				<th scope="col">Senha</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each = "pessoa: ${listaDePessoas}">
+				<td th:text="${pessoa.nome}"></td>
+				<td th:text="${pessoa.cpf}"></td>
+				<td th:text="${{pessoa.dataNascimento}}"></td>
+				<td th:text="${pessoa.endereco}"></td>
+				<td th:text="${pessoa.email}"></td>
+				<td th:text="${pessoa.senha}"></td>
+				
+				<td> <a class="btn btn-outline-primary" th:href="@{/home/usuarios/atualizar/{id} (id = ${pessoa.id})}">Editar</a></td>
+				<td> <a th:href="@{/home/usuarios/excluir/{id} (id = ${pessoa.id})}"> <button type="button" class="btn btn-outline-danger">X</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<table class="table">
+	<td><a th:href="@{/home}"><button type="button" class="btn btn-success">Voltar ao Inicio</button></td>
+	</table>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Carrinho</title>
+</head>
+<body>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Nome</th>
+				<th scope="col">Preço</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each = "carrinho: ${listaDeCompras}">
+				<td th:text="${carrinho.nome}"></td>
+				<td th:text="${carrinho.preco}"></td>
+				
+				<td> <a th:href="@{/home/carrinho/remover/{codigo} (codigo = ${carrinho.codigo})}"> <button type="button" class="btn btn-outline-danger">X</button></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table class="table">
+	<tr><td><a th:href="@{/home/carrinho}"><button type="button" class="btn btn-primary">Finalizar Compra</button></td></tr>
+	<tr><td><a th:href="@{/home}"><button type="button" class="btn btn-success">Voltar ao Inicio</button></td></tr>
+	</table>
+	
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

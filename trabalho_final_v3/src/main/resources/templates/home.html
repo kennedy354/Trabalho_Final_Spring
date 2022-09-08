@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pratos</title>
+	<style>
+		h1 {text-align: left;}
+	</style>
+</head>
+<body>
+
+<h1>Pratos</h1><!-- comentario -->
+	<table class="table">
+		<thead>
+			<tr>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td><a th:href="@{/home/formulario}"><button type="button" class="btn btn-primary">Cadastrar Prato</button></td></tr>
+			<tr><td><a th:href="@{/home/lista}"><button type="button" class="btn btn-primary">Lista de Pratos</button></td></tr>
+			
+			<tr><td><br></td></tr>
+			<tr><td><a th:href="@{/home/carrinho}"><button type="button" class="btn btn-success">Carrinho</button></td></tr>
+			<tr><td><br></td></tr>
+			
+			<tr><td><a th:href="@{/home/cadastro}"><button type="button" class="btn btn-warning">Cadastrar Usuário</button></td></tr>
+			<tr><td><a th:href="@{/home/usuarios}"><button type="button" class="btn btn-warning">Lista de Usuários</button></td></tr>
+			
+		</tbody>
+	</table>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
