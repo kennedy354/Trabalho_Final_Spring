@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head class="p-3 text-bg-dark">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+
+	<title></title>
+	
+</head>
+
+<body>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-10 col-md-offset-1">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Produto</th>
+							<th>Quantidade</th>
+							<th class="text-center">Preço</th>
+							<th></th>
+							<th></th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item: ${listaPratos}">
+							<td class="col-sm-8 col-md-6">
+								<div class="media">
+									<a class="thumbnail pull-left" href="#"> <img width="200" height="200"
+											th:src="@{'/images/'+${item.prato.nome}+.png}"> </a>
+									<div class="media-body">
+										<h4 class="media-heading" th:text="${item.prato.nome}"><a href="#"></a></h4>
+									</div>
+								</div>
+							</td>
+							<td class="col-sm-1 col-md-1" style="text-align: center"> <span
+									th:text="${item.quantidade}"></span>
+								<a
+									th:href="@{/alterarQuantidade/{codigo}/{acao} (codigo = ${item.prato.codigo},acao=${1})}">
+									<button type="submit" class="btn btn-primary"
+										style="text-align:center; width: 25px;height:25px; margin:0; padding:0">+</button>
+									<a
+										th:href="@{/alterarQuantidade/{codigo}/{acao} (codigo = ${item.prato.codigo},acao=${0})}">
+										<button type="submit" class="btn btn-primary"
+											style="text-align:center; width:25px;height:25px; margin:0; padding:0">-</button>
+							</td>
+							<td class="col-sm-1 col-md-1 text-center" th:text="${item.valorTotal}"><strong></strong>
+							</td>
+							<td class="col-sm-1 col-md-1" style="text-align: right;">
+								<a th:href="@{/removerPrato/{codigo} (codigo = ${item.prato.codigo})}">
+									<button type="button" class="btn btn-danger" style="align-items: right;">
+										<span class="glyphicon glyphicon-remove"></span> 
+									</button>
+							</td>
+						</tr>
+
+
+						<tr>
+							<td>   </td>
+							<td>   </td>
+							<td>   </td>
+							<td>
+								<h3><span>R$ 0,00</span></h3>
+							</td>
+							<!--  <td class="text-right"><h3><strong><span th:text="${compra.valorTotal}"></span></strong></h3></td>
+                   -->
+						</tr>
+						<tr>
+							<td>   </td>
+							<td>   </td>
+							<td>   </td>
+							<td><a th:href="@{/home/lista}">
+									<button type="button" class="btn btn-default">
+										<span class="glyphicon glyphicon-shopping-cart"></span> Voltar a lista de Pratos
+									</button></td>
+							
+							<td>
+									
+									<button type="button" class="btn btn-success">
+										Finalizar Compra <span class="glyphicon glyphicon-play"></span>
+									</button></a>
+								
+							</td>
+							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

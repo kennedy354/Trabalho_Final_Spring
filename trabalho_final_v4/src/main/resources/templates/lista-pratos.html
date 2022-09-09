@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Teste</title>
+</head>
+<body>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Nome</th>
+				<th scope="col">Preço</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each = "prato: ${listaDePratos}">
+				<td th:text="${prato.nome}"></td>
+				<td th:text="${prato.preco}"></td>
+				
+				<td> <img width="200" height="200" th:src="@{'/images/'+${prato.nome}+.png}"/> </td>
+
+				
+				
+				<td> <a class="btn btn-outline-success" th:href="@{/adicionarCarrinho/{codigo}(codigo = ${prato.codigo})}">Comprar</a> </td>
+				<td> <a class="btn btn-outline-primary" th:href="@{/home/lista/atualizar/{codigo} (codigo = ${prato.codigo})}">Editar</a></td>
+				<td> <a th:href="@{/home/lista/excluir/{codigo} (codigo = ${prato.codigo})}"> <button type="button" class="btn btn-outline-danger">X</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<table class="table">
+	<td><a th:href="@{/home}"><button type="button" class="btn btn-success">Voltar ao Inicio</button></td>
+	</table>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

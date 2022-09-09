@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Teste</title>
+</head>
+<body>
+	<h5>
+	<form method="post" action="/home/formulario/salvar" th:object="${prato}" enctype="multipart/form-data">
+		<input type="hidden" th:field="*{codigo}" />
+		<input placeholder="Nome"	type="text" th:field="*{nome}"/><br>
+		<input placeholder="Preco" type="number"  th:field="*{preco}"/><br>
+		<input placeholder="Foto" type="file" name="imagem"> <br><br>
+		<input type="submit" value="Cadastrar"/>
+	</form><br>
+	</h5>
+	<table class="table">
+	<td><a th:href="@{/home}"><button type="button" class="btn btn-success">Voltar ao Inicio</button></td>
+	</table>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
